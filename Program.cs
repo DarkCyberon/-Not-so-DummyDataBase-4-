@@ -32,7 +32,7 @@ namespace Database {
       }
     }
     
-    private static string InputTheFileName () {
+    private string InputTheFileName () {
       Console.WriteLine("Enter your database name (The scheme of your file must have \"Scheme\" after database name): ");
       string input = Console.ReadLine();
 

@@ -2,7 +2,7 @@ using System;
 
 namespace Database {
   class DataCheck {
-    private static void IsCorrectType (string[] lines, Scheme scheme) {
+    private void IsCorrectType (string[] lines, Scheme scheme) {
       for (int i = 0; i < lines.Length; i++) {
         string[] elements = lines[i].Split(';');
         for (int j = 0; j < elements.Length; j++) {
@@ -23,7 +23,7 @@ namespace Database {
         }
       }
     }
-    private static void IsColumnsRight (string[] lines, Scheme scheme) {
+    private void IsColumnsRight (string[] lines, Scheme scheme) {
       for (int i = 0; i < lines.Length; i++) {
         string[] elements = lines[i].Split(';');
         int elementsCount = elements.Length;
@@ -33,7 +33,7 @@ namespace Database {
           throw new Exception($"There is an error in {i+1} row:  The count of elements must be {rightCount} but it was {elementsCount}.");
       }
     }
-    public static void IsLinesCorrespondToScheme (string[] lines, Scheme scheme) {
+    public void IsLinesCorrespondToScheme (string[] lines, Scheme scheme) {
       IsCorrectType(lines, scheme);
       IsColumnsRight(lines, scheme);
     }
