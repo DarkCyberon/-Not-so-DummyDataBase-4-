@@ -5,7 +5,7 @@ namespace Database {
   class TableRow {
     public Dictionary<ElementOfScheme, object> Conteiment { get; private set; } = new();
 
-    public static List<TableRow> CollectTheRows(string[] databaseLines, Scheme scheme){
+    public List<TableRow> CollectTheRows(string[] databaseLines, Scheme scheme){
       var rows = new List<TableRow>();
 
       for (int i = 0; i < databaseLines.Length; i++) {
@@ -21,7 +21,7 @@ namespace Database {
       return rows;
     }
 
-    private static object IdentifyTheValue (string identifiable, ElementOfScheme place){
+    private object IdentifyTheValue (string identifiable, ElementOfScheme place){
       string type = place.Type;
 
       switch(type) {
