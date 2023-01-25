@@ -15,7 +15,7 @@ namespace Database {
       SetColumnsLength();
     }
     
-    private void SetColumnsLength() {
+    private static void SetColumnsLength() {
       SetMinColumnsLength();
 
       foreach (TableRow row in Rows) {
@@ -27,7 +27,7 @@ namespace Database {
       }
     }
     
-    private void SetMinColumnsLength() {
+    private static void SetMinColumnsLength() {
       foreach (ElementOfScheme element in Scheme.Elements)
         ColumnsLength.Add(element.Name.Length);
     }

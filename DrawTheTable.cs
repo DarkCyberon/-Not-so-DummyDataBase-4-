@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Database {
   class DrawTheTable {
-    public static void CollectTheTableToDraw (Table table) {
+    public void CollectTheTableToDraw (Table table) {
       var rows = new StringBuilder();
       rows.Append(DrawTheTableHead(table));
 
@@ -14,7 +14,7 @@ namespace Database {
       Console.WriteLine(rows);
     }
     
-    private static StringBuilder AdjustLengthInRow (TableRow row, Scheme scheme, List<int> columnsLength) {
+    private StringBuilder AdjustLengthInRow (TableRow row, Scheme scheme, List<int> columnsLength) {
       var rowElements = new List<string> ();
 
       for (int i = 0; i < scheme.Elements.Count; i++)
@@ -23,7 +23,7 @@ namespace Database {
       return CollectTheLine(rowElements);
     }
     
-    private static StringBuilder DrawTheTableHead(Table table){
+    private StringBuilder DrawTheTableHead(Table table){
       var headOfTable = new StringBuilder();
       var separators = new List<string>();
       var headElements = new List<string>();
@@ -42,7 +42,7 @@ namespace Database {
       return headOfTable;
     }
 
-    private static StringBuilder CollectTheLine(List<string> elements){
+    private StringBuilder CollectTheLine(List<string> elements){
       var line = new StringBuilder();
 
       foreach (string element in elements)
